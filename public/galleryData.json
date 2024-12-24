@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "name": "Margherita Pizza",
+      "description": "A classic Italian pizza made with a thin, crispy crust topped with fresh mozzarella cheese, flavorful tomato sauce, and aromatic basil leaves. Perfect for those who love simplicity and fresh ingredients.",
+      "imageSrc": "https://i.ibb.co.com/vmg6sGV/Margherita-Pizza-01.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Caesar Salad",
+      "description": "A refreshing salad made with crisp romaine lettuce, creamy Caesar dressing, crunchy croutons, and freshly grated Parmesan cheese. Often served with an optional topping of grilled chicken or shrimp.",
+      "imageSrc": "https://i.ibb.co.com/0M15TWB/Caesar-Salad-02.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Grilled Chicken Burger",
+      "description": "Juicy grilled chicken fillet served in a soft bun with crisp lettuce, ripe tomatoes, and a creamy mayo sauce. A perfect choice for a light yet flavorful meal.",
+      "imageSrc": "https://i.ibb.co.com/CQFLR9w/Grilled-Chicken-Burger-03.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Beef Steak",
+      "description": "Tender, juicy beef steak seasoned and grilled to perfection, served with creamy mashed potatoes and sautéed vegetables. A hearty and satisfying dish for meat lovers.",
+      "imageSrc": "https://i.ibb.co.com/JrBRvPh/Beef-Steak-04.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Spaghetti Carbonara",
+      "description": "A creamy pasta dish made with perfectly cooked spaghetti, crispy bacon bits, Parmesan cheese, and a touch of garlic. Finished with a sprinkle of black pepper for added flavor.",
+      "imageSrc": "https://i.ibb.co.com/MDFYrVX/Spaghetti-Carbonara-05.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Butter Chicken",
+      "description": "A rich and creamy curry made with marinated chicken cooked in a velvety tomato-based sauce. Served with naan bread or steamed rice for a complete meal.",
+      "imageSrc": "https://i.ibb.co.com/mh9VHhK/Butter-Chicken-06.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Vegetable Stir-Fry",
+      "description": "A vibrant mix of fresh vegetables stir-fried in a savory soy-based sauce with a hint of garlic and ginger. Served with a side of steamed rice or noodles.",
+      "imageSrc": "https://i.ibb.co.com/Bjv1Zp4/Vegetable-Stir-Fry-7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Sushi Platter",
+      "description": "An assortment of sushi rolls filled with fresh fish, vinegared rice, and seaweed. Served with pickled ginger, wasabi, and soy sauce for a delightful Japanese experience.",
+      "imageSrc": "https://i.ibb.co.com/Jzn54N3/Sushi-Platter-08.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Cheeseburger",
+      "description": "A classic burger with a juicy beef patty, melted cheddar cheese, lettuce, tomato, onions, and a tangy special sauce. Served in a toasted sesame bun.",
+      "imageSrc": "https://i.ibb.co.com/KGtf1sj/Cheeseburger-09.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Tandoori Chicken",
+      "description": "Chicken marinated in yogurt and spices, then grilled in a tandoor for a smoky flavor. Served with a side of mint chutney and fresh salad.",
+      "imageSrc": "https://i.ibb.co.com/mtnwc3C/Tandoori-Chicken-10.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Seafood Paella",
+      "description": "A traditional Spanish dish made with saffron-infused rice, shrimp, mussels, and a mix of fresh seafood. A flavorful one-pot meal perfect for sharing.",
+      "imageSrc": "https://i.ibb.co.com/H7CMj9n/Seafood-Paella-11.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Chocolate Lava Cake",
+      "description": "A rich, gooey chocolate cake with a molten chocolate center. Served warm with a scoop of vanilla ice cream for a perfect dessert experience.",
+      "imageSrc": "https://i.ibb.co.com/XyYZWjp/Chocolate-Lava-Cake-12.jpg"
+    }
+  ]
+  
