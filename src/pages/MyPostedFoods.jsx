@@ -4,12 +4,12 @@ import axios from 'axios';
 import MyPostedFoodsCard from '../components/MyPostedFoodsCard';
 
 const MyPostedFoods = () => {
-    const [foods, setsFoods] = useState([]);
+    const [foods, setFoods] = useState([]);
     const { user } = useContext(AuthContext);
     useEffect(() => {
         const allFoodData = async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/allfoods/${user?.email}`);
-            setsFoods(data);
+            setFoods(data);
         }
         allFoodData();
     }, [user]);
@@ -23,7 +23,9 @@ const MyPostedFoods = () => {
                 {
                     foods.map(food => <MyPostedFoodsCard
                         key={food._id}
-                        food={food}>
+                        food={food}
+                        foods={foods}
+                        setFoods={setFoods}>
                     </MyPostedFoodsCard>)
                 }
             </div>

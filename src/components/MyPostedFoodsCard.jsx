@@ -1,18 +1,41 @@
 import axios from 'axios';
 import React from 'react';
+import toast from 'react-hot-toast';
+import { TbReceiptYuan } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const MyPostedFoodsCard = ({ food }) => {
+const MyPostedFoodsCard = ({ food, foods, setFoods }) => {
     const { _id, photo, fName, price, description, category } = food;
     //postedDelete
     const handleDelteFood = async (id) => {
-        try{
-            await axios.delete(`${import.meta.env.VITE_API_URL}/postedDelete/${id}`)
-            
-        }
-        catch(err){
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await axios.delete(`${import.meta.env.VITE_API_URL}/postedDelete/${id}`)
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
+                }
+                catch (err) {
+                    toast.error(err.message);
+                }
+                const remainingFood = foods.filter(fd => fd._id !== id);
+                setFoods(remainingFood);
+            }
 
-        }
+        });
+        //   await axios.delete(`${import.meta.env.VITE_API_URL}/postedDelete/${id}`)
     }
     return (
         <div className="border border-gray-200 rounded-lg shadow-lg">
