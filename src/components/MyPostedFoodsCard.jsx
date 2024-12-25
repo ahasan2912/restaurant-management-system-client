@@ -38,7 +38,7 @@ const MyPostedFoodsCard = ({ food, foods, setFoods }) => {
         //   await axios.delete(`${import.meta.env.VITE_API_URL}/postedDelete/${id}`)
     }
     return (
-        <div className="border border-gray-200 rounded-lg shadow-lg">
+        <div className="border border-gray-200 rounded-lg shadow-lg p-3">
             <div className="relative">
                 <img
                     src={photo}
@@ -50,7 +50,7 @@ const MyPostedFoodsCard = ({ food, foods, setFoods }) => {
                 </div>
             </div>
             <div className="p-4">
-                <h2 className="text-2xl font-semibold text-gray-800">{fName}</h2>
+                <h2 className="text-2xl font-semibold">{fName}</h2>
                 <div className='flex gap-2 justify-between my-1'>
                     <p className='text-lg font-semibold'>{category}</p>
                     <div className="rating">

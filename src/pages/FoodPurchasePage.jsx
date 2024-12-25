@@ -19,15 +19,20 @@ const FoodPurchasePage = () => {
         }
         foodData();
     }, [id])
-    const { _id, fName, price } = food;
+    const { fName, photo, category, quantity, price, origin, description, email, name } = food;
     const handleAddFood = async e => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
+        const fName = form.fname.value;
         const price = form.price.value;
         const quantity = form.quantity.value;
         const date = startDate;
-        const addPurchases = { name, price, quantity, date }
+        const userName = form.user.value;
+        const userEmail = form.email.value;
+        const photoURL = photo;
+        const ownerName = name;
+        const ownerEmail = email;
+        const addPurchases = { fName, price, quantity, date, userName, userEmail, photoURL, ownerName, ownerEmail }
 
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/add-purchases`, addPurchases);
@@ -55,7 +60,7 @@ const FoodPurchasePage = () => {
                                 <span className='label-text font-semibold'>Food Name <span className='text-orange-500 text-lg'>*</span></span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='Food Name' className='input input-bordered w-full' defaultValue={fName} name='name' required />
+                                <input type="text" placeholder='Food Name' className='input input-bordered w-full' defaultValue={fName} name='fname' required />
                             </label>
                         </div>
                         <div className='form-control md:w-1/2'>
@@ -95,7 +100,7 @@ const FoodPurchasePage = () => {
                                 <span className='label-text font-semibold'>Name <span className='text-orange-500 text-lg'>*</span></span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='Buyer Name' className='input input-bordered w-full' defaultValue={user?.displayName} readOnly required />
+                                <input type="text" placeholder='Buyer Name' className='input input-bordered w-full' name='user' defaultValue={user?.displayName} readOnly required />
                             </label>
                         </div>
                         <div className='form-control md:w-1/2'>
@@ -103,7 +108,7 @@ const FoodPurchasePage = () => {
                                 <span className='label-text font-semibold'>Email <span className='text-orange-500 text-lg'>*</span></span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='Buyer Email' className='input input-bordered w-full' defaultValue={user?.email} readOnly required />
+                                <input type="text" placeholder='Buyer Email' className='input input-bordered w-full' name='email' defaultValue={user?.email} readOnly required />
                             </label>
                         </div>
                     </div>

@@ -11,6 +11,7 @@ import ErrorPages from "../pages/ErrorPages";
 import FoodPurchasePage from "../pages/FoodPurchasePage";
 import MyPostedFoods from "../pages/MyPostedFoods";
 import MypostedUpdate from "../pages/MypostedUpdate";
+import MyFoodOrders from "../pages/MyFoodOrders";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: '/postUpdate/:id',
                 element: <MypostedUpdate></MypostedUpdate>
+            },
+            {
+                path: '/myFoodOrder',
+                element: <MyFoodOrders></MyFoodOrders>
             },
             {
                 path: '/login',

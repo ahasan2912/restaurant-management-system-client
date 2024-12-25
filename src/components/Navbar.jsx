@@ -5,7 +5,7 @@ import { AuthContext } from '../router/AuthProvider';
 const Navbar = () => {
     const { user, handleLogOut } = useContext(AuthContext);
     return (
-        <div className='bg-base-100 w-full shadow-sm px-10'>
+        <div className='bg-base-100 w-full shadow-lg px-10'>
             <div className='navbar'>
                 <div className='flex-1'>
                     <Link to='/' className='flex gap-2 items-center'>
@@ -59,7 +59,7 @@ const Navbar = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to='/my-bids'>My Orders</Link>
+                                        <Link to='/myFoodOrder'>My Orders</Link>
                                     </li>
                                     <li className='mt-2'>
                                         <button

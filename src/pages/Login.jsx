@@ -36,6 +36,7 @@ const Login = () => {
             .then(res => {
                 toast.success("You have successfully Login!")
                 // nevigate(location?.state ? location.state : "/");
+                nevigate('/')
             })
             .catch((err) => {
                 setError(err.message);
