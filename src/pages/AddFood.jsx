@@ -3,9 +3,11 @@ import { AuthContext } from '../router/AuthProvider';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const AddFood = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleAddFood = async(e) => {
         e.preventDefault();
         const form = e.target;
@@ -31,6 +33,7 @@ const AddFood = () => {
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
+            navigate('/mypostedfood')
         }
         catch(err){
             toast.error(err.message);
@@ -38,8 +41,8 @@ const AddFood = () => {
 
     }
 return (
-    <div className='max-w-5xl mx-auto my-10'>
-        <h2 className='text-4xl font-extrabold text-center mt-10'>Add Your Food</h2>
+    <div className='max-w-5xl mx-auto mt-28'>
+        <h2 className='text-5xl font-semibold text-center mt-10'>Add Your Food</h2>
         <div className='bg-[#F4F3F0] px-6 py-10 rounded-xl mt-10'>
             <form onSubmit={handleAddFood}>
                 {/* form row */}
@@ -119,3 +122,4 @@ return (
 )};
 
 export default AddFood;
+

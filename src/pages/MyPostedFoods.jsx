@@ -15,9 +15,9 @@ const MyPostedFoods = () => {
     }, [user]);
 
     return (
-        <div className='max-w-7xl mx-auto my-14 px-3'>
+        <div className='max-w-7xl mt-28 mx-auto mb-10 px-3'>
             <div>
-                <h1 className='text-4xl font-semibold text-center'>My Added Foods</h1>
+                <h1 className='text-5xl font-semibold text-center'>My Added Foods</h1>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10'>
                 {

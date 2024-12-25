@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../router/AuthProvider';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
 
 const MyFoodOrders = () => {
     const { user } = useContext(AuthContext);
@@ -12,22 +14,46 @@ const MyFoodOrders = () => {
         }
         foodsData();
     }, [user]);
+    ///deleleList/:id
 
-    useEffect(()=>{
-        
-    }, [])
-
+    const handleDeleteOrder = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await axios.delete(`${import.meta.env.VITE_API_URL}/deleleList/${id}`);
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your Order has been cancelled.",
+                        icon: "success"
+                    });
+                }
+                catch (err) {
+                    toast.error(err.message);
+                }
+                const remainingFood = foods.filter(fd => fd._id !== id);
+                setFoods(remainingFood);
+            }
+        });
+    }
     return (
-        <div className='max-w-7xl mx-auto mt-10 px-3'>
+        <div className='max-w-7xl mx-auto mt-28 px-3'>
             <div className='flex items-center gap-3'>
                 <h1 className='text-4xl font-semibold '>{user?.displayName} Order List</h1>
-                <div className='text-3xl font-bold bg-orange-300 text-gray-500 px-4 rounded-md'>{foods.length}</div>
+                <div className='text-3xl font-bold bg-gray-300 text-gray-500 px-4 rounded-md'>{foods.length}</div>
             </div>
             <div className="overflow-x-auto mt-4">
-                <table className="table">
+                <table className="table border">
                     {/* head */}
-                    <thead>
-                        <tr className='text-base border hover'>
+                    <thead className=''>
+                        <tr className='text-base border'>
                             <th>Serial</th>
                             <th>Food Imgage</th>
                             <th>Food Name</th>
@@ -40,7 +66,7 @@ const MyFoodOrders = () => {
                     <tbody>
                         {
                             foods.map((food, idx) =>
-                                <tr className='hover border text-base'>
+                                <tr key={idx} className='hover border text-base'>
                                     <th>{idx + 1}</th>
                                     <td>
                                         <img className='w-14 h-14 rounded-full' src={food.photoURL} alt="" />
@@ -50,7 +76,7 @@ const MyFoodOrders = () => {
                                     <td className='font-semibold'>{food.ownerName}</td>
                                     <td className='font-semibold'>{food.date}</td>
                                     <td>
-                                        <button className='btn font-semibold'>Delete</button>
+                                        <button onClick={() => handleDeleteOrder(food._id)} className='btn font-semibold border'>Delete</button>
                                     </td>
                                 </tr>
                             )

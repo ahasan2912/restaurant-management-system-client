@@ -14,13 +14,11 @@ const Gallery = () => {
             setGallery(data);
         }
         allGalleryData();
-    }, []);
-    console.log(gallery)
-    //galleryData.json 
+    }, []); 
     return (
-        <div className='max-w-7xl mx-auto my-10'>
+        <div className='max-w-7xl mx-auto mt-28 mb-10'>
             <div>
-                <h1 className='text-5xl text-center font-semibold my-5'>Foods Collectoin</h1>
+                <h1 className='text-5xl text-center font-semibold my-5'>Foods Collection</h1>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {gallery.map((item) => (

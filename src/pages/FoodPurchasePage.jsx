@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../router/AuthProvider';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -12,6 +12,7 @@ const FoodPurchasePage = () => {
     const [food, setFood] = useState({})
     const { id } = useParams();
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     useEffect(() => {
         const foodData = async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/food/${id}`)
@@ -43,13 +44,14 @@ const FoodPurchasePage = () => {
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
+            navigate('/myFoodOrder');
         }
         catch (err) {
             toast.error()
         }
     }
     return (
-        <div className='max-w-5xl mx-auto my-10'>
+        <div className='max-w-5xl mx-auto mb-10 my-28'>
             <h2 className='text-4xl font-extrabold text-center mt-10'>Please give me valid information and purchases product</h2>
             <div className='bg-[#F4F3F0] px-6 py-10 rounded-xl mt-5'>
                 <form onSubmit={handleAddFood}>
