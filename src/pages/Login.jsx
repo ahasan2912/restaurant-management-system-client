@@ -23,8 +23,7 @@ const Login = () => {
             .then((result) => {
                 setUser(result.user);
                 toast.success("You have successfully Login!");
-                nevigate('/');
-                // nevigate(location?.state ? location.state : "/");
+                nevigate(location?.state ? location.state : "/");
             })
             .catch((err) => {
                 setError(err.message);
@@ -35,15 +34,14 @@ const Login = () => {
         handleLogInWithGoogle()
             .then(res => {
                 toast.success("You have successfully Login!")
-                // nevigate(location?.state ? location.state : "/");
-                nevigate('/')
+                nevigate(location?.state ? location.state : "/");
             })
             .catch((err) => {
                 setError(err.message);
             })
     }
     return (
-        <div className='flex flex-col items-center justify-center mt-14 px-5'>
+        <div className='flex flex-col items-center justify-center mt-32 px-5'>
             <div className='card bg-base-200 w-full max-w-md shrink-0'>
                 <form onSubmit={handlesignInBtn} className="card-body">
                     <div className='flex items-center justify-center'>

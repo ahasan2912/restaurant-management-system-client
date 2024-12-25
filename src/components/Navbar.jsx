@@ -19,7 +19,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar bg-base-100 shadow-md px-4 top-0 fixed w-full z-50">
+        <div className="navbar bg-base-100 shadow-md px-6 top-0 fixed w-full z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,13 +44,16 @@ const Navbar = () => {
                         <NavLink to='/gellary' className="hover:text-red-600">Gallery</NavLink>
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost text-xl font-semibold">Pastaria</Link>
+                <Link to="/" className="text-xl md:text-2xl font-semibold uppercase">Pastaria</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 space-x-6 text-base font-semibold ">
                     <NavLink to='/' className="hover:text-red-600">Home</NavLink>
                     <NavLink to='/allFoods' className="hover:text-red-600">All Foods</NavLink>
                     <NavLink to='/gellary' className="hover:text-red-600">Gallery</NavLink>
+                    <NavLink to='/addFood' className="hover:text-red-600">Add Food</NavLink>
+                    <NavLink to='/mypostedfood' className="hover:text-red-600">My Foods</NavLink>
+                    <NavLink to='/myFoodOrder' className="hover:text-red-600">My Orders</NavLink>
                 </ul>
             </div>
             <div className="navbar-end space-x-2">
@@ -58,7 +61,7 @@ const Navbar = () => {
                     <ul className='menu menu-horizontal px-1'>
                         {!user && (
                             <li>
-                                <Link to='/login'>Login</Link>
+                                <Link className='text-base font-semibold btn' to='/login'>Login</Link>
                             </li>
                         )}
                     </ul>

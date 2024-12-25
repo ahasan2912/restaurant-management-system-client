@@ -9,13 +9,13 @@ const Footer = () => {
                 <nav className='lg:col-span-4 space-y-4'>
                     <div className='mb-2'>
                         <Link to="/" className="text-xl font-bold">
-                            <h1 className='text-3xl'>Add Job</h1>
+                            <h1 className='text-2xl uppercase'>Pastaria</h1>
                         </Link>
                     </div>
-                    <p className=''>Find the perfect gear for your favorite sport equipments. We offer a wide range of high-quality products for cricket, football, basketball, swimming, tennis, yoga and others.</p>
+                    <p className=''>Pastaria is the newest pasta house in Bangladesh. Unique in its own kind, it's dedicated 100% in the making of fresh pasta accompanied by a variety of delicious sauces made with carefully chosen ingredients.</p>
                     <div className='flex items-center'>
                         <input className='py-4 px-6 rounded-l-xl outline-none text-gray-500 w-full sm:w-1/2' type="text" placeholder='Enter Your Email' defaultValue="ahasanhabib2912@gmail.com" />
-                        <input className='bg-[#fb923c] cursor-pointer py-4 px-4 rounded-r-xl' type="submit" value="Send" />
+                        <input className='bg-[#807d7c] cursor-pointer py-4 px-4 rounded-r-xl' type="submit" value="Send" />
                     </div>
                     <div className='flex gap-4'>
                         <Link className='border border-gray-400 rounded-full p-1'><FaFacebook size={22} /></Link>
@@ -32,10 +32,10 @@ const Footer = () => {
                 </nav>
                 <nav className='lg:col-span-2 flex flex-col space-y-4'>
                     <h6 className="text-xl mb-2">Top categories</h6>
-                    <Link className="link link-hover">Cricket</Link>
-                    <Link className="link link-hover">Football</Link>
-                    <Link className="link link-hover">Basketball</Link>
-                    <Link className="link link-hover">Tennis Racquet</Link>
+                    <Link className="link link-hover">Margherita Pizza</Link>
+                    <Link className="link link-hover">Grilled Chicken Burger</Link>
+                    <Link className="link link-hover">Butter Chicken</Link>
+                    <Link className="link link-hover">Tandoori Chicken</Link>
                 </nav>
                 <nav className='lg:col-span-2 flex flex-col space-y-4'>
                     <h6 className="text-xl mb-2">Help & support</h6>

@@ -12,7 +12,7 @@ import FoodPurchasePage from "../pages/FoodPurchasePage";
 import MyPostedFoods from "../pages/MyPostedFoods";
 import MypostedUpdate from "../pages/MypostedUpdate";
 import MyFoodOrders from "../pages/MyFoodOrders";
-import Demo from "../pages/Demo";
+import PrivetRouter from "./PrivetRouter";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addFood',
-                element: <AddFood></AddFood>
+                element: <PrivetRouter><AddFood></AddFood></PrivetRouter>
             },
             {
                 path: '/allFoods',
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/foodpurchases/:id',
-                element: <FoodPurchasePage></FoodPurchasePage>
+                element: <PrivetRouter><FoodPurchasePage></FoodPurchasePage></PrivetRouter>
             },
             {
                 path: '/gellary',
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/mypostedfood',
-                element: <MyPostedFoods></MyPostedFoods>
+                element: <PrivetRouter><MyPostedFoods></MyPostedFoods></PrivetRouter>
             },
             {
                 path: '/postUpdate/:id',
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myFoodOrder',
-                element: <MyFoodOrders></MyFoodOrders>
+                element: <PrivetRouter><MyFoodOrders></MyFoodOrders></PrivetRouter>
             },
             {
                 path: '/login',
@@ -64,10 +64,6 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Resgister></Resgister>
             },
-            {
-                path: '/xyz',
-                element: <Demo></Demo>
-            }
         ]
     }
 ], {

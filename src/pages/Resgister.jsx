@@ -35,25 +35,22 @@ const Resgister = () => {
             await updateUserProfile(name, photo)
             setUser({ ...result.user, photoURL: photo, displayName: name })
             toast.success("You have successfully registered");
-            nevigate('/')
-            // nevigate(location?.state ? location.state : "/");
+            nevigate(location?.state ? location.state : "/");
         }
         catch (err) {
             toast.error(err?.message)
         }
-
-
     };
 
     const handleSingInGoogle = () => {
         handleLogInWithGoogle()
             .then(res => {
                 toast.success("You have successfully registered");
-                // nevigate(location?.state ? location.state : "/");
+                nevigate(location?.state ? location.state : "/");
             })
     }
     return (
-        <div className='flex flex-col items-center justify-center my-14 px-5'>
+        <div className='flex flex-col items-center justify-center my-28 px-5'>
             <div className='card bg-base-200 w-full max-w-md shrink-0'>
                 <form onSubmit={handleSignUpBtn} className="card-body">
                     <div className='flex items-center justify-center'>
