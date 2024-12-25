@@ -57,7 +57,7 @@ return (
                             <span className='label-text font-semibold'>Food Image URL <span className='text-orange-500 text-lg'>*</span></span>
                         </label>
                         <label className='input-group'>
-                            <input type="text" placeholder='Image URL' className='input input-bordered w-full' name='photo' required />
+                            <input type="url" placeholder='Image URL' className='input input-bordered w-full' name='photo' required />
                         </label>
                     </div>
                 </div>
@@ -76,7 +76,7 @@ return (
                             <span className='label-text font-semibold'>Quantity <span className='text-orange-500 text-lg'>*</span></span>
                         </label>
                         <label className='input-group'>
-                            <input type="text" placeholder='Quantity' className='input input-bordered w-full' name='quantity' required />
+                            <input type="number" placeholder='Quantity' className='input input-bordered w-full' name='quantity' required />
                         </label>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ return (
                             <span className='label-text font-semibold'>Price <span className='text-orange-500 text-lg'>*</span></span>
                         </label>
                         <label className='input-group'>
-                            <input type="text" placeholder='Price' className='input input-bordered w-full' name='price' required />
+                            <input type="number" placeholder='Price' className='input input-bordered w-full' name='price' required />
                         </label>
                     </div>
                     <div className='form-control md:w-1/2'>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaMagento } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const FoodCart = ({ food }) => {
@@ -16,7 +17,7 @@ const FoodCart = ({ food }) => {
                 </div>
             </div>
             <div className="p-4">
-                <h2 className="text-2xl font-semibold text-gray-800">Rib-Eye Steak</h2>
+                <h2 className="text-2xl font-semibold text-gray-800">{fName}</h2>
                 <div className='flex gap-2 justify-between my-1'>
                     <p className='text-lg font-semibold'>{category}</p>
                     <div className="rating">

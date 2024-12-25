@@ -1,8 +1,19 @@
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MyPostedFoodsCard = ({ food }) => {
     const { _id, photo, fName, price, description, category } = food;
+    //postedDelete
+    const handleDelteFood = async (id) => {
+        try{
+            await axios.delete(`${import.meta.env.VITE_API_URL}/postedDelete/${id}`)
+            
+        }
+        catch(err){
+
+        }
+    }
     return (
         <div className="border border-gray-200 rounded-lg shadow-lg">
             <div className="relative">
@@ -16,7 +27,7 @@ const MyPostedFoodsCard = ({ food }) => {
                 </div>
             </div>
             <div className="p-4">
-                <h2 className="text-2xl font-semibold text-gray-800">Rib-Eye Steak</h2>
+                <h2 className="text-2xl font-semibold text-gray-800">{fName}</h2>
                 <div className='flex gap-2 justify-between my-1'>
                     <p className='text-lg font-semibold'>{category}</p>
                     <div className="rating">
@@ -36,10 +47,10 @@ const MyPostedFoodsCard = ({ food }) => {
                     <Link to={`/food/${_id}`}>
                         <button className="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">View Details</button>
                     </Link>
-                    <Link to={`/food/${_id}`}>
+                    <Link to={`/postUpdate/${_id}`}>
                         <button className="mt-4 px-2 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">Update</button>
                     </Link>
-                    <Link to={`/food/${_id}`}>
+                    <Link onClick={() => handleDelteFood(_id)}>
                         <button className="mt-4 px-2 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">Delete</button>
                     </Link>
                 </div>
