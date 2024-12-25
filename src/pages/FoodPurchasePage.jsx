@@ -14,7 +14,7 @@ const FoodPurchasePage = () => {
     const { user } = useContext(AuthContext);
     useEffect(() => {
         const foodData = async () => {
-            const { data } = await axios.get(`http://localhost:5000/food/${id}`)
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/food/${id}`)
             setFood(data);
         }
         foodData();
@@ -30,7 +30,7 @@ const FoodPurchasePage = () => {
         const addPurchases = { name, price, quantity, date }
 
         try {
-            await axios.post('http://localhost:5000/add-purchases', addPurchases);
+            await axios.post(`${import.meta.env.VITE_API_URL}/add-purchases`, addPurchases);
             form.reset();
             Swal.fire({
                 title: 'Purchase Scuccess!',

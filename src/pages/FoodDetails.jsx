@@ -7,7 +7,7 @@ const FoodDetails = () => {
     const { id } = useParams();
     useEffect(() => {
         const foodData = async () => {
-            const { data } = await axios.get(`http://localhost:5000/food/${id}`)
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/food/${id}`)
             setFood(data);
         }
         foodData();

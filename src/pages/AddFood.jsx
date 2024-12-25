@@ -23,7 +23,7 @@ const AddFood = () => {
         // console.table(addData)
 
         try{
-           await axios.post('http://localhost:5000/addfood', addData);
+           await axios.post(`${import.meta.env.VITE_API_URL}/addfood`, addData);
             form.reset();
             Swal.fire({
                 title: 'Added Scuccess!',
