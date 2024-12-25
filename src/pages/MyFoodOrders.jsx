@@ -44,7 +44,7 @@ const MyFoodOrders = () => {
         });
     }
     return (
-        <div className='max-w-7xl mx-auto mt-28 px-3'>
+        <div className='max-w-7xl mx-auto mt-28 px-3 my-14'>
             <div className='flex items-center gap-3'>
                 <h1 className='text-4xl font-semibold '>{user?.displayName} Order List</h1>
                 <div className='text-3xl font-bold bg-gray-300 text-gray-500 px-4 rounded-md'>{foods.length}</div>

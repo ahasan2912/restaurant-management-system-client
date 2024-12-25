@@ -12,6 +12,7 @@ import FoodPurchasePage from "../pages/FoodPurchasePage";
 import MyPostedFoods from "../pages/MyPostedFoods";
 import MypostedUpdate from "../pages/MypostedUpdate";
 import MyFoodOrders from "../pages/MyFoodOrders";
+import Demo from "../pages/Demo";
 
 const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Resgister></Resgister>
+            },
+            {
+                path: '/xyz',
+                element: <Demo></Demo>
             }
         ]
     }
