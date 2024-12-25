@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FoodCart = ({ food }) => {
+const MyPostedFoodsCard = ({ food }) => {
     const { _id, photo, fName, price, description, category } = food;
     return (
         <div className="border border-gray-200 rounded-lg shadow-lg">
@@ -31,13 +31,21 @@ const FoodCart = ({ food }) => {
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     </div>
                 </div>
-                <p className="text-gray-600 text-sm">{description}</p>
-                <Link to={`/food/${_id}`}>
-                    <button className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">View Details</button>
-                </Link>
+                <p className="text-gray-600 text-base">{description}</p>
+                <div className='flex gap-3 text-sm'>
+                    <Link to={`/food/${_id}`}>
+                        <button className="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">View Details</button>
+                    </Link>
+                    <Link to={`/food/${_id}`}>
+                        <button className="mt-4 px-2 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">Update</button>
+                    </Link>
+                    <Link to={`/food/${_id}`}>
+                        <button className="mt-4 px-2 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">Delete</button>
+                    </Link>
+                </div>
             </div>
         </div>
     );
 };
 
-export default FoodCart;
+export default MyPostedFoodsCard;
