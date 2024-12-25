@@ -8,6 +8,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Foods></Foods>
+            <div className="bg-[url('/src/assets/banner.png')] h-[70vh] bg-no-repeat bg-cover bg-center hidden lg:block"></div>
             <CustomerReview></CustomerReview>
         </div>
     );
