@@ -12,7 +12,7 @@ import customer5 from '../assets/customer5.png';
 const CustomerReview = () => {
     return (
         <div>
-            <div className='max-w-7xl mx-auto hidden lg:block'>
+            <div className='max-w-7xl mx-auto hidden lg:block px-3'>
                 <h1 className='text-5xl font-bold text-center mt-10'>Our Customer Review</h1>
                 <p className='w-[70%] mx-auto text-center mt-4'>Our customers love sharing their experiences! From quality products to excellent service, their reviews highlight the trust and satisfaction they have in us. Read their stories and see why we’re a favorite choice!</p>
                 <div className='mt-10 mb-16'>

@@ -13,7 +13,7 @@ const Foods = () => {
         allFoodData()
     }, [])
     return (
-        <div className='mt-16 max-w-7xl mx-auto'>
+        <div className='mt-16 max-w-7xl mx-auto px-3'>
             <div className=''>
                 <h1 className='text-5xl font-bold text-center'>Our Top Favourite Foods</h1>
                 <p className='w-full md:w-[50%] mx-auto text-center mt-4'>Our top favourite foods showcases the most popular and highly-rated dishes loved by our customers. Indulge in a selection of irresistible flavors crafted with care and perfection!</p>
