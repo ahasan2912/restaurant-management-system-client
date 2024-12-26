@@ -21,7 +21,7 @@ const AddFood = () => {
         const email = user?.email;
         const name = user?.displayName;
 
-        const addData = { fName, photo, category, quantity, price, origin, description, email, name }
+        const addData = { fName, photo, category, quantity, price, origin, description, email, name, order_coutn: 0 }
         // console.table(addData)
 
         try{

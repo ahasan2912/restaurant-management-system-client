@@ -1,10 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { AuthContext } from '../router/AuthProvider';
 
 const FoodDetails = () => {
+    const { user } = useContext(AuthContext)
     const [food, setFood] = useState({});
     const { id } = useParams();
+
     useEffect(() => {
         const foodData = async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/food/${id}`)
@@ -12,7 +15,8 @@ const FoodDetails = () => {
         }
         foodData();
     }, [id])
-    const { _id, fName, photo, category, quantity, price, origin, description } = food;
+    const { _id, fName, photo, category, quantity, price, origin, description, email, name, order_coutn } = food;
+    let available = parseInt(quantity - order_coutn);
     return (
         <div className='max-w-6xl mx-auto px-3'>
             <div className='border flex flex-col lg:flex-row justify-center my-32 lg:my-32 gap-5 p-5 rounded-md'>
@@ -34,13 +38,27 @@ const FoodDetails = () => {
                     </div>
                     <p className='text-lg font-semibold'>Price: ${price}</p>
                     <p className='text-base text-justify'>{description}</p>
-                    <p className='text-lg font-semibold'>Stock Status: <span className='border-2 rounded-md py-1 px-2 hover:cursor-pointer hover:bg-gray-400 transition'>Available</span></p>
-                    <p className='text-lg font-semibold'>Availabel Quantity: {quantity}</p>
-                    <p className='text-lg font-semibold'>Purchases Quantity: 0</p>
+                    <p className='text-lg font-semibold'>Stock Status:
+                        {
+                            available > 0 ? <span className='border-2 rounded-md py-1 px-2 hover:cursor-pointer hover:bg-gray-100 transition ml-2'>Available</span> :
+                                <div className="tooltip" data-tip="Food is not available">
+                                    <span className='border-2 rounded-md py-1 px-2 hover:cursor-pointer hover:bg-gray-400 transition ml-2'>Unavailable</span>
+                                </div>
+
+                        }
+                    </p>
                     <p className='text-lg font-semibold'>Origin of product: {origin}</p>
-                    <Link to={`/foodpurchases/${_id}`}>
-                        <button className='btn text-base'>Add To Purchase</button>
-                    </Link>
+                    <p className='text-lg font-semibold'>Availabel Quantity: {available}</p>
+                    <p className='text-lg font-semibold'>Purchases Quantity: {order_coutn}</p>
+                    <div className='divider'></div>
+                    <div>
+                        <h1 className='text-xl font-semibold'>Food Owner Information</h1>
+                        <h1><span className='font-semibold text-lg'>Name: </span>{name}</h1>
+                        <h1><span className='font-semibold text-lg'>Email: </span>{email}</h1>
+                    </div>
+                    <Link className='btn'
+                        disabled={user?.email === email || available < 1}
+                        to={`/foodpurchases/${_id}`}>Add To Purchase</Link>
                 </div>
             </div>
         </div>

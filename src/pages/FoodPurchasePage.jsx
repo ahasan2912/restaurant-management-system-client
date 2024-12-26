@@ -20,7 +20,7 @@ const FoodPurchasePage = () => {
         }
         foodData();
     }, [id])
-    const { fName, photo, category, quantity, price, origin, description, email, name } = food;
+    const { _id, fName, photo, category, quantity, price, origin, description, email, name } = food;
     const handleAddFood = async e => {
         e.preventDefault();
         const form = e.target;
@@ -33,7 +33,8 @@ const FoodPurchasePage = () => {
         const photoURL = photo;
         const ownerName = name;
         const ownerEmail = email;
-        const addPurchases = { fName, price, quantity, date, userName, userEmail, photoURL, ownerName, ownerEmail }
+        const foodId = _id;
+        const addPurchases = { fName, price, quantity, date, userName, userEmail, photoURL, ownerName, ownerEmail, foodId}
 
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/add-purchases`, addPurchases);
