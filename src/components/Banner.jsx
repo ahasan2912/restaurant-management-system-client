@@ -10,7 +10,7 @@ import banner3 from '../assets/banner3.jpg';
 import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
-        <div className='w-full '>
+        <div className='w-full'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -31,7 +31,7 @@ const Banner = () => {
                             <div className='text-center'>
                                 <div className='px-2 space-y-1'>
                                     <h1 className='text-3xl font-semibold text-white md:text-5xl'>Pastaria Hotel and Restaurant</h1>
-                                    <p className='text-white text-sm md:text-base w-full px-10 mx-auto text-justify md:text-center'>Pastaria is the newest pasta house in Bangladesh. Unique in its own kind, it's dedicated 100% in the making of fresh pasta accompanied by a variety of delicious sauces made with carefully chosen ingredients. We bring to you the best tastes, in full portions and reasonable prices! We see pasta as art, and we treat it as such. We never forget to add plenty of love and fantasy to our dishes!</p>
+                                    <p className='text-white text-sm md:text-base w-full px-10 mx-auto text-justify md:text-center max-w-7xl'>Pastaria is the newest pasta house in Bangladesh. Unique in its own kind, it's dedicated 100% in the making of fresh pasta accompanied by a variety of delicious sauces made with carefully chosen ingredients. We bring to you the best tastes, in full portions and reasonable prices! We see pasta as art, and we treat it as such. We never forget to add plenty of love and fantasy to our dishes!</p>
                                 </div>
                                 <br />
                                 <Link
@@ -50,7 +50,7 @@ const Banner = () => {
                             <div className='text-center'>
                                 <div className='px-2 space-y-1'>
                                     <h1 className='text-3xl font-semibold text-white md:text-5xl'>Pastaria Hotel and Restaurant</h1>
-                                    <p className='text-white text-sm md:text-base w-full px-10 mx-auto text-justify md:text-center'>Pastaria is the newest pasta house in Bangladesh. Unique in its own kind, it's dedicated 100% in the making of fresh pasta accompanied by a variety of delicious sauces made with carefully chosen ingredients. We bring to you the best tastes, in full portions and reasonable prices! We see pasta as art, and we treat it as such. We never forget to add plenty of love and fantasy to our dishes!</p>
+                                    <p className='text-white text-sm md:text-base w-full px-10 mx-auto text-justify md:text-center max-w-7xl'>Pastaria is the newest pasta house in Bangladesh. Unique in its own kind, it's dedicated 100% in the making of fresh pasta accompanied by a variety of delicious sauces made with carefully chosen ingredients. We bring to you the best tastes, in full portions and reasonable prices! We see pasta as art, and we treat it as such. We never forget to add plenty of love and fantasy to our dishes!</p>
                                 </div>
                                 <br />
                                 <Link
@@ -69,7 +69,7 @@ const Banner = () => {
                             <div className='text-center'>
                                 <div className='px-2 space-y-2'>
                                     <h1 className='text-3xl font-semibold text-white md:text-5xl'>Pastaria Hotel and Restaurant</h1>
-                                    <p className='text-white text-sm md:text-base w-full px-10 mx-auto text-justify md:text-center'>Pastaria is the newest pasta house in Bangladesh. Unique in its own kind, it's dedicated 100% in the making of fresh pasta accompanied by a variety of delicious sauces made with carefully chosen ingredients. We bring to you the best tastes, in full portions and reasonable prices! We see pasta as art, and we treat it as such. We never forget to add plenty of love and fantasy to our dishes!</p>
+                                    <p className='text-white text-sm md:text-base w-full px-10 mx-auto text-justify md:text-center max-w-7xl'>Pastaria is the newest pasta house in Bangladesh. Unique in its own kind, it's dedicated 100% in the making of fresh pasta accompanied by a variety of delicious sauces made with carefully chosen ingredients. We bring to you the best tastes, in full portions and reasonable prices! We see pasta as art, and we treat it as such. We never forget to add plenty of love and fantasy to our dishes!</p>
                                 </div>
                                 <br />
                                 <Link
