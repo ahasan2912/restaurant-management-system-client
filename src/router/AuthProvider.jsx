@@ -2,7 +2,8 @@ import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { auth } from "../firebase/firebase.init";
 import toast from "react-hot-toast";
-export const AuthContext = createContext();
+import axios from "axios";
+export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -29,34 +30,35 @@ const AuthProvider = ({ children }) => {
     //LogOut
     const handleLogOut = () => {
         toast.success('You have Successfully LogOut!');
+        setLoading(true)
         return signOut(auth);
     }
 
     //update profile
     const updateUserProfile = (name, photo) => {
         return updateProfile(auth.currentUser, {
-          displayName: name,
-          photoURL: photo,
+            displayName: name,
+            photoURL: photo,
         })
-      }
+    }
 
     //all observation field
     useEffect(() => {
-        const unsbucribe = onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser) {
-                setUser(currentUser);
+        const unsubscribe = onAuthStateChanged(auth, async currentUser => {
+            if (currentUser?.email) {
+                setUser(currentUser)
+                /* const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, { email: currentUser?.email }, { withCredentials: true }); */
             }
             else {
-                setUser(currentUser);
+                setUser(currentUser)
+               /*  const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/logout`, { withCredentials: true }) */
             }
-            setLoading(false);
+            setLoading(false)
         })
-
         return () => {
-            unsbucribe();
+            return unsubscribe()
         }
     }, [])
-
     const authInfo = {
         user,
         setUser,

@@ -11,6 +11,7 @@ const Login = () => {
     const [error, setError] = useState("");
     const nevigate = useNavigate();
     const location = useLocation();
+    const from = location?.state || '/'
 
 
     const handlesignInBtn = (evetn) => {
@@ -23,7 +24,7 @@ const Login = () => {
             .then((result) => {
                 setUser(result.user);
                 toast.success("You have successfully Login!");
-                nevigate(location?.state ? location.state : "/");
+                nevigate(from, { replace: true })
             })
             .catch((err) => {
                 setError(err.message);
@@ -34,7 +35,7 @@ const Login = () => {
         handleLogInWithGoogle()
             .then(res => {
                 toast.success("You have successfully Login!")
-                nevigate(location?.state ? location.state : "/");
+                nevigate(from, { replace: true })
             })
             .catch((err) => {
                 setError(err.message);

@@ -20,7 +20,10 @@ const FoodPurchasePage = () => {
         }
         foodData();
     }, [id])
-    const { _id, fName, photo, category, quantity, price, origin, description, email, name } = food;
+    const { _id, fName, photo, category, quantity: available, price, origin, description, email, name, purchase_count } = food;
+    let currentItem = parseInt(available - purchase_count);
+    console.log(currentItem)
+
     const handleAddFood = async e => {
         e.preventDefault();
         const form = e.target;
@@ -34,8 +37,12 @@ const FoodPurchasePage = () => {
         const ownerName = name;
         const ownerEmail = email;
         const foodId = _id;
-        const addPurchases = { fName, price, quantity, date, userName, userEmail, photoURL, ownerName, ownerEmail, foodId}
-
+        if (currentItem < quantity) {
+            document.getElementById('submittedField').disabled = true;
+            toast.error('Your selected quantities are more than available quantity');
+            return 0;
+        }
+        const addPurchases = { fName, price, quantity, date, userName, userEmail, photoURL, ownerName, ownerEmail, foodId }
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/add-purchases`, addPurchases);
             form.reset();
@@ -116,7 +123,7 @@ const FoodPurchasePage = () => {
                         </div>
                     </div>
                     <div className='mt-6'>
-                        <input type="submit" value='Confirm Purchases' className='btn btn-block input-bordered' />
+                        <input id='submittedField' type="submit" value='Confirm Purchases' className='btn btn-block input-bordered' />
                     </div>
                 </form>
             </div>

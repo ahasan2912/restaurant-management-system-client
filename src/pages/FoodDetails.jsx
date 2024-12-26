@@ -15,8 +15,12 @@ const FoodDetails = () => {
         }
         foodData();
     }, [id])
-    const { _id, fName, photo, category, quantity, price, origin, description, email, name, order_coutn } = food;
-    let available = parseInt(quantity - order_coutn);
+    const { _id, fName, photo, category, quantity, price, origin, description, email, name, purchase_count} = food;
+
+    console.log(quantity, purchase_count)
+    let available = parseInt(quantity - purchase_count);
+    let purchaseQuntity = parseInt()
+
     return (
         <div className='max-w-6xl mx-auto px-3'>
             <div className='border flex flex-col lg:flex-row justify-center my-32 lg:my-32 gap-5 p-5 rounded-md'>
@@ -49,7 +53,7 @@ const FoodDetails = () => {
                     </p>
                     <p className='text-lg font-semibold'>Origin of product: {origin}</p>
                     <p className='text-lg font-semibold'>Availabel Quantity: {available}</p>
-                    <p className='text-lg font-semibold'>Purchases Quantity: {order_coutn}</p>
+                    <p className='text-lg font-semibold'>Purchases Quantity: {purchase_count}</p>
                     <div className='divider'></div>
                     <div>
                         <h1 className='text-xl font-semibold'>Food Owner Information</h1>

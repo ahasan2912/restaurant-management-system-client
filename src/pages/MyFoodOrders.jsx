@@ -3,7 +3,7 @@ import { AuthContext } from '../router/AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
-
+import moment from "moment";
 const MyFoodOrders = () => {
     const { user } = useContext(AuthContext);
     const [foods, setFoods] = useState([]);
@@ -74,7 +74,7 @@ const MyFoodOrders = () => {
                                     <td className='font-semibold'>{food.fName}</td>
                                     <td className='font-semibold'>${food.price}</td>
                                     <td className='font-semibold'>{food.ownerName}</td>
-                                    <td className='font-semibold'>{food.date}</td>
+                                    <td className='font-semibold'>{moment.utc(food.date).local().format("YYYY-MM-DD hh:mm:ss A")}</td>
                                     <td>
                                         <button onClick={() => handleDeleteOrder(food._id)} className='btn font-semibold border'>Delete</button>
                                     </td>
