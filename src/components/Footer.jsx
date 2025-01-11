@@ -46,7 +46,7 @@ const Footer = () => {
                 </nav>
             </div>
             <div className='border border-gray-500'></div>
-            <p className='text-center py-3'>Copyright © 2024 Pastaria</p>
+            <p className='text-center py-3'>Copyright © {new Date().getFullYear()} Pastaria</p>
         </footer>
     );
 };

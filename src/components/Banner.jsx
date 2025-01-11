@@ -26,7 +26,7 @@ const Banner = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className='mySwiper'>
                 <SwiperSlide>
-                    <div className='w-full bg-center bg-cover bg-no-repeat h-[60vh] md:h-[100vh]' style={{ backgroundImage: `url(${banner2})` }}>
+                    <div className='w-full bg-center bg-cover bg-no-repeat h-[60vh] md:h-[70vh]' style={{ backgroundImage: `url(${banner2})` }}>
                         <div className='flex items-center justify-center w-full h-full bg-gray-900/30 '>
                             <div className='text-center'>
                                 <div className='px-2 space-y-1'>
@@ -45,7 +45,7 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='w-full bg-center bg-cover bg-no-repeat h-[60vh] md:h-[100vh]' style={{ backgroundImage: `url(${banner1})` }}>
+                    <div className='w-full bg-center bg-cover bg-no-repeat h-[60vh] md:h-[70vh]' style={{ backgroundImage: `url(${banner1})` }}>
                         <div className='flex items-center justify-center w-full h-full bg-gray-900/30'>
                             <div className='text-center'>
                                 <div className='px-2 space-y-1'>
@@ -64,7 +64,7 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='w-full bg-center bg-cover bg-no-repeat h-[60vh] md:h-[100vh]' style={{ backgroundImage: `url(${banner3})` }}>
+                    <div className='w-full bg-center bg-cover bg-no-repeat h-[60vh] md:h-[70vh]' style={{ backgroundImage: `url(${banner3})` }}>
                         <div className='flex items-center justify-center w-full h-full bg-gray-900/30 '>
                             <div className='text-center'>
                                 <div className='px-2 space-y-2'>

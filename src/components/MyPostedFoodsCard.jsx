@@ -65,7 +65,7 @@ const MyPostedFoodsCard = ({ food, foods, setFoods }) => {
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     </div>
                 </div>
-                <p className="text-gray-600 text-base">{description}</p>
+                <p className="text-gray-600 text-base">{description.substring(0, 150)}.....</p>
                 <div className='flex gap-3 text-sm'>
                     <Link to={`/food/${_id}`}>
                         <button className="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">Details</button>

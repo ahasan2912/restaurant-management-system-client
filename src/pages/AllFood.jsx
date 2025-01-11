@@ -39,7 +39,7 @@ const AllFood = () => {
                     </div>
                 </form>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-6'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-6'>
                 {
                     foods.map(food => <FoodCart key={food._id} food={food}></FoodCart>)
                 }

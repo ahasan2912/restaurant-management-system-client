@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
                     .then(res => {
                         setLoading(false)
                     })
-            }
+            } 
             setLoading(false)
         })
         return () => {

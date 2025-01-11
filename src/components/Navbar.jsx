@@ -42,6 +42,16 @@ const Navbar = () => {
                         <NavLink to='/' className="hover:text-red-600">Home</NavLink>
                         <NavLink to='/allFoods' className="hover:text-red-600">All Foods</NavLink>
                         <NavLink to='/gellary' className="hover:text-red-600">Gallery</NavLink>
+                        {
+                            user && (
+                                <>
+                                    <NavLink to='/addFood' className="hover:text-red-600">Add Food</NavLink>
+                                    <NavLink to='/mypostedfood' className="hover:text-red-600">My Foods</NavLink>
+                                    <NavLink to='/myFoodOrder' className="hover:text-red-600">My Orders</NavLink>
+                                </>
+                            )
+                        }
+
                     </ul>
                 </div>
                 <Link to="/" className="text-xl md:text-2xl font-semibold uppercase">Pastaria</Link>
@@ -51,9 +61,15 @@ const Navbar = () => {
                     <NavLink to='/' className="hover:text-red-600">Home</NavLink>
                     <NavLink to='/allFoods' className="hover:text-red-600">All Foods</NavLink>
                     <NavLink to='/gellary' className="hover:text-red-600">Gallery</NavLink>
-                    <NavLink to='/addFood' className="hover:text-red-600">Add Food</NavLink>
-                    <NavLink to='/mypostedfood' className="hover:text-red-600">My Foods</NavLink>
-                    <NavLink to='/myFoodOrder' className="hover:text-red-600">My Orders</NavLink>
+                    {
+                        user && (
+                            <>
+                                <NavLink to='/addFood' className="hover:text-red-600">Add Food</NavLink>
+                                <NavLink to='/mypostedfood' className="hover:text-red-600">My Foods</NavLink>
+                                <NavLink to='/myFoodOrder' className="hover:text-red-600">My Orders</NavLink>
+                            </>
+                        )
+                    }
                 </ul>
             </div>
             <div className="navbar-end space-x-2">
