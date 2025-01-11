@@ -1,3 +1,4 @@
+# [Server side:](https://github.com/ahasan2912/restaurant-management-system-server)
 # Project Name: Pastaria Hotel and Restaurant
 The "Pastaria Hotel and Restaurant" Management Website is a full-stack application developed using the MERN stack (MongoDB, Express.js, React.js, and Node.js). This project aims to enhance customer engagement with features like online reservations and ordering while streamlining internal operations, including staff and order management, to improve overall efficiency and user experience.
 The purpose of the "Pastaria Hotel and Restaurant" Management Website is to enhance customer engagement through a user-friendly platform while optimizing internal operations like staff and order management for improved efficiency and service quality.
